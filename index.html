@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Portfolio Website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              green: "#0DB760",
+            },
+            backgroundImage: {
+              "hero-pattern": "url('img/banner-dot.svg')",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="container fixed mx-auto top-0 left-0 right-0">
+      <div class="navbar max-w-7xl mx-auto bg-transparent">
+        <div class="navbar-start">
+          <a class="normal-case cursor-pointer text-xl flex gap-2 items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="54"
+              height="42"
+              viewBox="0 0 54 42"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0297 41.9996V14.1703C11.0297 12.7138 11.2014 11.5975 10.3415 10.3109C9.63421 9.25147 8.41118 8.09749 6.86262 7.32176C5.83024 6.79205 4.62624 6.45147 3.36473 6.45147C3.13517 6.45147 2.90561 6.45147 2.6955 6.47029C3.93799 5.54352 6.00231 4.84352 7.89456 4.54059C6.00231 2.87573 3.55538 2.81883 0.936833 2.85691C0.630752 2.87573 0.306081 2.87573 0 2.89456C2.02628 1.17323 5.69622 0 9.90181 0C11.1253 0 12.2912 0.0945599 13.3807 0.28368C16.2482 0.756479 19.0964 2.06192 20.6635 3.87824L32.4961 18.5778L45.2654 2.8H53.1786C53.6373 2.8 54 3.15941 54 3.61339V4.78619L48.2843 6.26192C47.8637 6.35691 47.5969 6.73515 47.6925 7.0753C47.7686 7.41589 48.1888 7.60501 48.6094 7.49163L54 6.09205V7.41632L48.2843 8.89205C47.8637 9.00587 47.5969 9.36485 47.6925 9.70587C47.7686 10.0465 48.1888 10.2356 48.6094 10.1218L54 8.74059V10.0649L48.2843 11.5406C47.8637 11.6351 47.5969 12.0134 47.6925 12.354C47.7686 12.6946 48.1888 12.8837 48.6094 12.7703L54 11.3703V12.6946L48.2843 14.1703C47.8637 14.2841 47.5969 14.6431 47.6925 14.9837C47.7686 15.3243 48.1888 15.5134 48.6094 15.4L54 14.0188V15.3431L48.2843 16.8188C47.8637 16.9134 47.5969 17.2916 47.6925 17.6322C47.7686 17.9728 48.1888 18.1619 48.6094 18.0485L54 16.6485V17.9732L48.2843 19.4485C47.8637 19.5623 47.5969 19.9213 47.6925 20.2623C47.7686 20.6025 48.1888 20.7921 48.6094 20.6782L54 19.2971V20.6025L48.2843 22.0971C47.8637 22.1916 47.5969 22.5699 47.6925 22.9105C47.7686 23.2322 48.1888 23.4213 48.6094 23.3268L54 21.9268V23.251L48.2843 24.7268C47.8637 24.8402 47.5969 25.1996 47.6925 25.5402C47.7686 25.8803 48.1888 26.0699 48.6094 25.9565L54 24.5753V25.8803L48.2843 27.3561C47.8637 27.4699 47.5969 27.8477 47.6925 28.1694C47.7686 28.51 48.1888 28.6991 48.6094 28.6046L54 27.205V28.5293L48.2843 30.005C47.8637 30.1184 47.5969 30.4778 47.6925 30.8184C47.7686 31.159 48.1888 31.3481 48.6094 31.2347L54 29.8535V31.159L48.2843 32.6343C47.8637 32.7481 47.5969 33.1071 47.6925 33.4477C47.7686 33.7883 48.1888 33.9774 48.6094 33.8833L54 32.4832V33.8079L48.2843 35.2833C47.8637 35.3971 47.5969 35.7561 47.6925 36.0966C47.7686 36.4372 48.1888 36.6263 48.6094 36.513L54 35.1318V36.4372L48.2843 37.913C47.8637 38.0263 47.5969 38.3853 47.6925 38.7263C47.7686 39.0665 48.1888 39.2556 48.6094 39.1615L54 37.7615V41.205C53.9814 41.6402 53.6183 41.9991 53.1786 41.9991H44.2707V17.7272L32.4961 32.0678L20.836 17.7272V42H11.0297V41.9996Z"
+                fill="#0DB760"
+              />
+            </svg>
+            <span class="text-green font-semibold text-3xl">Design</span>
+          </a>
+        </div>
+        <div class="navbar-center hidden md:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonial">Testimonial</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <div class="hidden lg:block">
+            <a class="btn btn-outline border-2 border-green">Download CV</a>
+          </div>
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="inline-block w-5 h-5 stroke-current"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </label>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#testimonial">Testimonial</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- banner -->
+    <section class="relative" id="about">
+      <div class="bg-hero-pattern bg-no-repeat object-cover h-screen"></div>
+      <div class="absolute top-14 right-0 left-0">
+        <div class="hero min-h-screen">
+          <div class="hero-content flex-col md:flex-row-reverse">
+            <div class="md:w-1/2">
+              <img src="img/profile.svg" class="md:w-4/5 lg:ml-28 p-5 mx-auto" />
+            </div>
+            <div class="md:w-1/2 space-y-3 mt-8 md:mt-0">
+              <div class="relative">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="99"
+                  height="42"
+                  viewBox="0 0 99 42"
+                  fill="none"
+                >
+                  <path
+                    d="M98.75 21C98.75 23.814 97.4068 26.5164 94.933 28.9976C92.4582 31.4799 88.8647 33.7268 84.4042 35.6191C75.4841 39.4034 63.1438 41.75 49.5 41.75C35.8562 41.75 23.5159 39.4034 14.5959 35.6191C10.1354 33.7268 6.54176 31.4799 4.067 28.9976C1.59324 26.5164 0.25 23.814 0.25 21C0.25 18.186 1.59324 15.4836 4.067 13.0024C6.54176 10.5201 10.1354 8.27324 14.5959 6.3809C23.5159 2.59664 35.8562 0.25 49.5 0.25C63.1438 0.25 75.4841 2.59664 84.4042 6.3809C88.8647 8.27324 92.4582 10.5201 94.933 13.0024C97.4068 15.4836 98.75 18.186 98.75 21Z"
+                    stroke="#0DB760"
+                    stroke-width="0.5"
+                  />
+                </svg>
+                <h5 class="absolute top-2 pl-5">Welcome</h5>
+              </div>
+              <h1 class="text-5xl font-bold md:w-3/4 leading-[60px]">
+                I have
+                <span class="text-green">Creative Design</span> Experience
+              </h1>
+              <p class="py-6">
+                I'm Tanvir, a creative Product Designer. I've been helping
+                businesses to solve their problems with my design for 2 years.
+              </p>
+              <div>
+                <button class="btn bg-green text-white hover:bg-red-600">
+                  Contact Me
+                </button>
+                <button class="btn bg-transparent border-none">
+                  View Portfolio
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="34"
+                    height="34"
+                    viewBox="0 0 34 34"
+                    fill="none"
+                  >
+                    <path
+                      d="M18.9176 10.6522L24.1715 11.3746M24.1715 11.3746L23.4491 16.6285M24.1715 11.3746L9.82858 22.2503"
+                      stroke="#0DB760"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute hidden xl:block md:right-6 top-1/2">
+        <div class="ml-5">
+          <p class="rotate-90 mb-5">Follow me on:</p>
+           <div class="bg-green w-[2px] h-20 mx-auto mt-14"></div>
+           <div class="mx-auto w-5 mt-6"> 
+            <a href="" ><img src="img/hero-fb.svg" alt="" class="mb-2"></a>
+            <a href=""><img src="img/hero-insta.svg" alt="" class="mb-2"></a>
+            <a href="" class="mb-2"><img src="img/hero-linkdin.svg" alt=""></a>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!--my stats -->
+    <section class="mt-40 mb-32 max-w-7xl mx-auto">
+      <div class="pt-44 sm:pt-52 md:pt-0 px-5">
+        <div class="flex sm:flex-row justify-around sm:items-start gap-3 mt-32">
+  
+          <div class="space-y-4">
+            <div class="text-3xl text-green font-semibold">80+</div>
+            <div class="text-xl font-medium">Satisfied clients</div>
+          </div>
+
+          <div class="bg-green w-[2px] md:h-20 mx-auto"></div>
+          
+          <div class="space-y-4">
+            <div class="text-3xl text-green font-semibold">200+</div>
+            <div class="text-xl font-medium">Projects completed</div>
+          </div>
+
+          <div class="bg-green w-[2px] md:h-20 mx-auto"></div>            
+          
+          <div class="space-y-4">
+            <div class="text-3xl text-green font-semibold">99+</div>
+            <div class="text-xl font-medium">Reviews given</div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    <div class="relative">
+      <div class="absolute right-0 top-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="133" viewBox="0 0 44 133" fill="none">
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0909 62)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 33.8182)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 47.9091)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 19.7273)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 5.63641)" fill="#FF0000"/>
+          <rect x="42.2727" y="70.4545" width="5.63636" height="5.63636" rx="2" fill="#FF0000"/>
+          <rect x="42.2727" y="98.6364" width="5.63636" height="5.63636" rx="2" fill="#FF0000"/>
+          <rect x="42.2727" y="84.5454" width="5.63636" height="5.63636" rx="2" fill="#FF0000"/>
+          <rect x="42.2727" y="112.727" width="5.63636" height="5.63636" rx="2" fill="#FF0000"/>
+          <rect x="42.2727" y="126.818" width="5.63636" height="5.63636" rx="2" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 62)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 33.8182)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 47.9091)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 19.7273)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 5.63641)" fill="#FF0000"/>
+          <rect x="28.1818" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="28.1819" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="14.0909" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="42.2728" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="56.3637" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0909 132.455)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 104.273)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 118.364)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 90.1818)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 76.0909)" fill="#0DB760"/>
+          <rect x="42.2727" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="42.2727" y="28.1819" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="42.2727" y="14.0909" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="42.2727" y="42.2728" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="42.2727" y="56.3637" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 132.455)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 104.273)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 118.364)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 90.1818)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 76.0909)" fill="#0DB760"/>
+          <rect x="28.1818" y="70.4545" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="98.6364" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="84.5454" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="112.727" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="126.818" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- skills sections -->
+    <section class="max-w-7xl mx-auto md:my-40 px-5" id="skills">
+      <div class="flex flex-col sm:flex-row justify-between items-start gap-5">
+        <!-- left div -->
+          <div class="md:w-1/2 space-y-3 mb-5">
+            <div class="relative">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="99"
+                height="42"
+                viewBox="0 0 99 42"
+                fill="none"
+              >
+                <path
+                  d="M98.75 21C98.75 23.814 97.4068 26.5164 94.933 28.9976C92.4582 31.4799 88.8647 33.7268 84.4042 35.6191C75.4841 39.4034 63.1438 41.75 49.5 41.75C35.8562 41.75 23.5159 39.4034 14.5959 35.6191C10.1354 33.7268 6.54176 31.4799 4.067 28.9976C1.59324 26.5164 0.25 23.814 0.25 21C0.25 18.186 1.59324 15.4836 4.067 13.0024C6.54176 10.5201 10.1354 8.27324 14.5959 6.3809C23.5159 2.59664 35.8562 0.25 49.5 0.25C63.1438 0.25 75.4841 2.59664 84.4042 6.3809C88.8647 8.27324 92.4582 10.5201 94.933 13.0024C97.4068 15.4836 98.75 18.186 98.75 21Z"
+                  stroke="#0DB760"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <h5 class="absolute top-2 pl-5">My Skills</h5>
+            </div>
+            <h1 class="text-5xl font-bold leading-[60px] md:pr-5">
+              Why Hire Me For Your Next  
+              <span class="text-green">Project?</span>
+            </h1>
+            <p class="py-6 md:w-2/3">
+              I'm specialist in UI/UX Designe. My passion is designing & solving problems through user experience and research.
+            </p>
+            <div>
+              <button class="btn bg-green text-white hover:bg-red-600 py-4 px-8">
+                Hire Me
+              </button>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <div class="grid grid-rows-3 grid-flow-col gap-4 items-center">
+              <div class="col-span-2 space-y-2 md:w-[255px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <path d="M2.625 9.625H25.375M1.93703 10.2927L13.2984 25.0288C13.3809 25.1365 13.4872 25.2237 13.6088 25.2837C13.7305 25.3437 13.8643 25.3749 14 25.3749C14.1357 25.3749 14.2695 25.3437 14.3912 25.2837C14.5128 25.2237 14.6191 25.1365 14.7016 25.0288L26.063 10.2927C26.1747 10.1473 26.2395 9.97129 26.2488 9.78814C26.258 9.60498 26.2114 9.42333 26.1149 9.26734L22.2611 3.04664C22.1818 2.91791 22.0708 2.81159 21.9388 2.73779C21.8068 2.664 21.6582 2.62517 21.507 2.625H6.49305C6.34183 2.62517 6.19316 2.664 6.06117 2.73779C5.92918 2.81159 5.81824 2.91791 5.73891 3.04664L1.88508 9.26734C1.78864 9.42333 1.74196 9.60498 1.75124 9.78814C1.76052 9.97129 1.82532 10.1473 1.93703 10.2927V10.2927Z" stroke="#0DB760" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21.875 3.5L19.25 9.625L14 2.625M6.125 3.5L8.75 9.625L14 2.625M14 24.5L8.75 9.625M14 24.5L19.25 9.625" stroke="#0DB760" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h4 class="text-xl font-semibold">Visual Design</h4>
+                <p>Create user interface design with
+                  unique & modern ideas</p>
+              </div>
+              <div class="row-span-2 col-span-2 space-y-2 md:w-[255px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <path d="M1.75 10.5L14 3.5L26.25 10.5L14 17.5L1.75 10.5Z" stroke="#0DB760" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6.125 13.125V20.125L14 24.5L21.875 20.125V13.125M26.25 20.125V10.5M14 17.5V24.5" stroke="#0DB760" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h4 class="text-xl font-semibold">UX Research</h4>
+                <p>Create digital user products with
+                  updated ideas</p>
+              </div>
+              <div class="row-span-3 space-y-2 md:w-[255px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <path d="M2.625 17.5H6.125L9.625 3.5L13.125 24.5L16.625 12.25L18.375 17.5H21.875" stroke="#0DB760" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M23.625 19.25C24.5915 19.25 25.375 18.4665 25.375 17.5C25.375 16.5335 24.5915 15.75 23.625 15.75C22.6585 15.75 21.875 16.5335 21.875 17.5C21.875 18.4665 22.6585 19.25 23.625 19.25Z" stroke="#0DB760" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h4 class="text-xl font-semibold">Design Prototype</h4>
+                <p>Create advance design prototype with Figma apps.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+
+    <div class="relative">
+      <div class="absolute left-0 top-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="133" viewBox="0 0 44 133" fill="none">
+          <rect x="29.9091" y="62.5454" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9091 62.5454)" fill="#FF0000"/>
+          <rect x="29.9092" y="34.3636" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 34.3636)" fill="#FF0000"/>
+          <rect x="29.9092" y="48.4545" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 48.4545)" fill="#FF0000"/>
+          <rect x="29.9092" y="20.2727" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 20.2727)" fill="#FF0000"/>
+          <rect x="29.9092" y="6.18182" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 6.18182)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 71)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 99.1818)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 85.0909)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 113.273)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 127.364)" fill="#FF0000"/>
+          <rect x="44" y="62.5454" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 62.5454)" fill="#FF0000"/>
+          <rect x="44" y="34.3636" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 34.3636)" fill="#FF0000"/>
+          <rect x="44" y="48.4545" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 48.4545)" fill="#FF0000"/>
+          <rect x="44" y="20.2727" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 20.2727)" fill="#FF0000"/>
+          <rect x="44" y="6.18182" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 6.18182)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8182 0.54541)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 28.7273)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 14.6364)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 42.8182)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 56.9091)" fill="#0DB760"/>
+          <rect x="29.9091" y="133" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9091 133)" fill="#0DB760"/>
+          <rect x="29.9092" y="104.818" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 104.818)" fill="#0DB760"/>
+          <rect x="29.9092" y="118.909" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 118.909)" fill="#0DB760"/>
+          <rect x="29.9092" y="90.7272" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 90.7272)" fill="#0DB760"/>
+          <rect x="29.9092" y="76.6363" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 76.6363)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 0.54541)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 28.7273)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 14.6364)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 42.8182)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 56.9091)" fill="#0DB760"/>
+          <rect x="44" y="133" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 133)" fill="#0DB760"/>
+          <rect x="44" y="104.818" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 104.818)" fill="#0DB760"/>
+          <rect x="44" y="118.909" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 118.909)" fill="#0DB760"/>
+          <rect x="44" y="90.7272" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 90.7272)" fill="#0DB760"/>
+          <rect x="44" y="76.6363" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 76.6363)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8182 71)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 99.1818)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 85.0909)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 113.273)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 127.364)" fill="#0DB760"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- portfolio section -->
+    <section class="max-w-7xl mx-auto md:my-20 px-5" id="portfolio">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-5">
+        <!-- left div -->
+          <div class="md:w-2/5 space-y-3 mb-5">
+            <div class="relative">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="99"
+                height="42"
+                viewBox="0 0 99 42"
+                fill="none"
+              >
+                <path
+                  d="M98.75 21C98.75 23.814 97.4068 26.5164 94.933 28.9976C92.4582 31.4799 88.8647 33.7268 84.4042 35.6191C75.4841 39.4034 63.1438 41.75 49.5 41.75C35.8562 41.75 23.5159 39.4034 14.5959 35.6191C10.1354 33.7268 6.54176 31.4799 4.067 28.9976C1.59324 26.5164 0.25 23.814 0.25 21C0.25 18.186 1.59324 15.4836 4.067 13.0024C6.54176 10.5201 10.1354 8.27324 14.5959 6.3809C23.5159 2.59664 35.8562 0.25 49.5 0.25C63.1438 0.25 75.4841 2.59664 84.4042 6.3809C88.8647 8.27324 92.4582 10.5201 94.933 13.0024C97.4068 15.4836 98.75 18.186 98.75 21Z"
+                  stroke="#0DB760"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <h5 class="absolute top-2 pl-5">Portfolio</h5>
+            </div>
+            <h1 class="text-5xl font-bold leading-[60px] md:pr-5">
+              My Creative Works Latest  
+              <span class="text-green">Project?</span>
+            </h1>
+            <p class="py-6 md:w-2/3">
+              I have selected and mentioned here some of my latest projects to share with you.
+            </p>
+            <div>
+              <button class="btn bg-green text-white hover:bg-red-600 py-4 px-8">
+                Show More
+              </button>
+            </div>
+          </div>
+          <div class=" w-full">
+            <div class="carousel w-full">
+              <div id="item1" class="carousel-item w-2/5">
+                <img src="img/project1.svg" class="w-full md:h-[512px]" />
+              </div> 
+              <div id="item2" class="carousel-item w-2/5">
+                <img src="img/project2.svg" class="w-full md:h-[512px]" />
+              </div> 
+              <div id="item3" class="carousel-item w-2/5">
+                <img src="img/project3.svg" class="w-full md:h-[512px]" />
+              </div> 
+              <div id="item4" class="carousel-item w-2/5">
+                <img src="img/project1.svg" class="w-full md:h-[512px]" />
+              </div> 
+              <div id="item5" class="carousel-item w-2/5">
+                <img src="img/project2.svg" class="w-full md:h-[512px]" />
+              </div> 
+              <div id="item6" class="carousel-item w-2/5">
+                <img src="img/project3.svg" class="w-full md:h-[512px]" />
+              </div> 
+            </div> 
+            <div class="flex justify-center w-full py-3 gap-2">
+              <a href="#item1" class="btn btn-xs">1</a> 
+              <a href="#item4" class="btn btn-xs">2</a> 
+              <a href="#item6" class="btn btn-xs">3</a> 
+            </div>
+          </div>
+      </div>
+    </section>
+
+
+    <div class="relative">
+      <div class="absolute right-0 top-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="133" viewBox="0 0 44 133" fill="none">
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0909 62)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 33.8182)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 47.9091)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 19.7273)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 5.63641)" fill="#FF0000"/>
+          <rect x="42.2727" y="70.4545" width="5.63636" height="5.63636" rx="2" fill="#FF0000"/>
+          <rect x="42.2727" y="98.6364" width="5.63636" height="5.63636" rx="2" fill="#FF0000"/>
+          <rect x="42.2727" y="84.5454" width="5.63636" height="5.63636" rx="2" fill="#FF0000"/>
+          <rect x="42.2727" y="112.727" width="5.63636" height="5.63636" rx="2" fill="#FF0000"/>
+          <rect x="42.2727" y="126.818" width="5.63636" height="5.63636" rx="2" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 62)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 33.8182)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 47.9091)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 19.7273)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 5.63641)" fill="#FF0000"/>
+          <rect x="28.1818" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="28.1819" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="14.0909" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="42.2728" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="56.3637" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0909 132.455)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 104.273)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 118.364)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 90.1818)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 14.0908 76.0909)" fill="#0DB760"/>
+          <rect x="42.2727" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="42.2727" y="28.1819" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="42.2727" y="14.0909" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="42.2727" y="42.2728" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="42.2727" y="56.3637" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 132.455)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 104.273)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 118.364)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 90.1818)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(1 0 0 -1 0 76.0909)" fill="#0DB760"/>
+          <rect x="28.1818" y="70.4545" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="98.6364" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="84.5454" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="112.727" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+          <rect x="28.1819" y="126.818" width="5.63636" height="5.63636" rx="2" fill="#0DB760"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- review sections -->
+    <section class="max-w-7xl mx-auto my-28 px-5" id="testimonial">
+      <div class="md:w-1/2 space-y-3 mb-5">
+        <div class="relative">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="99"
+            height="42"
+            viewBox="0 0 99 42"
+            fill="none"
+          >
+            <path
+              d="M98.75 21C98.75 23.814 97.4068 26.5164 94.933 28.9976C92.4582 31.4799 88.8647 33.7268 84.4042 35.6191C75.4841 39.4034 63.1438 41.75 49.5 41.75C35.8562 41.75 23.5159 39.4034 14.5959 35.6191C10.1354 33.7268 6.54176 31.4799 4.067 28.9976C1.59324 26.5164 0.25 23.814 0.25 21C0.25 18.186 1.59324 15.4836 4.067 13.0024C6.54176 10.5201 10.1354 8.27324 14.5959 6.3809C23.5159 2.59664 35.8562 0.25 49.5 0.25C63.1438 0.25 75.4841 2.59664 84.4042 6.3809C88.8647 8.27324 92.4582 10.5201 94.933 13.0024C97.4068 15.4836 98.75 18.186 98.75 21Z"
+              stroke="#0DB760"
+              stroke-width="0.5"
+            />
+          </svg>
+          <h5 class="absolute top-2 pl-5">Reviews</h5>
+        </div>
+        <h1 class="text-5xl font-bold leading-[60px] md:pr-5">
+          Our Customer Say Something 
+          <span class="text-green">About Us</span>
+        </h1>
+      </div>
+
+      <!-- reviews -->
+      <div class="carousel w-full py-8 md:ml-10">
+  
+        <div id="slide1" class="carousel-item relative w-full flex-wrap md:flex-nowrap space-x-3">
+          <div class="w-full md:w-2/5 mt-12 ">
+            <img src="img/rattings.svg" alt="">
+            <p class="py-5">We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company</p>
+            <div class="flex gap-2 space-x-2 items-center">
+              <div><img src="img/reviewer1.svg" alt=""></div>
+              <div>
+                <h5>Amir Uddin</h5>
+                <p>UX Designer </p>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-2/5 w-full mt-12 ">
+            <img src="img/rattings.svg" alt="">
+            <p class="py-5">We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company</p>
+            <div class="flex gap-2 space-x-2 items-center">
+              <div><img src="img/reviewer1.svg" alt=""></div>
+              <div>
+                <h5>Amir Uddin</h5>
+                <p>UX Designer </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-2/5 mt-12 ">
+            <img src="img/rattings.svg" alt="">
+            <p class="py-5">We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company</p>
+            <div class="flex gap-2 space-x-2 items-center">
+              <div><img src="img/reviewer1.svg" alt=""></div>
+              <div>
+                <h5>Amir Uddin</h5>
+                <p>UX Designer </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="absolute flex justify-between  -top-5 right-5">
+            <a href="#slide3" class=" mr-5"><img src="img/left-arrow.svg" alt=""></a> 
+            <a href="#slide2" class=""><img src="img/right-arrow.svg" alt=""></a>
+          </div>
+        </div> 
+        <div id="slide2" class="carousel-item relative w-full flex-wrap md:flex-nowrap space-x-3">
+          <div class="w-full md:w-2/5 mt-12 ">
+            <img src="img/rattings.svg" alt="">
+            <p class="py-5">We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company</p>
+            <div class="flex gap-2 space-x-2 items-center">
+              <div><img src="img/reviewer1.svg" alt=""></div>
+              <div>
+                <h5>Amir Uddin</h5>
+                <p>UX Designer </p>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-2/5 w-full mt-12 ">
+            <img src="img/rattings.svg" alt="">
+            <p class="py-5">We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company</p>
+            <div class="flex gap-2 space-x-2 items-center">
+              <div><img src="img/reviewer1.svg" alt=""></div>
+              <div>
+                <h5>Amir Uddin</h5>
+                <p>UX Designer </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-2/5 mt-12 ">
+            <img src="img/rattings.svg" alt="">
+            <p class="py-5">We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company</p>
+            <div class="flex gap-2 space-x-2 items-center">
+              <div><img src="img/reviewer1.svg" alt=""></div>
+              <div>
+                <h5>Amir Uddin</h5>
+                <p>UX Designer </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="absolute flex justify-between  -top-5 right-5">
+            <a href="#slide1" class=" mr-5"><img src="img/left-arrow.svg" alt=""></a> 
+            <a href="#slide3" class=""><img src="img/right-arrow.svg" alt=""></a>
+          </div>
+        </div> 
+        <div id="slide3" class="carousel-item relative w-full flex-wrap md:flex-nowrap space-x-3">
+          <div class="w-full md:w-2/5 mt-12 ">
+            <img src="img/rattings.svg" alt="">
+            <p class="py-5">We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company</p>
+            <div class="flex gap-2 space-x-2 items-center">
+              <div><img src="img/reviewer1.svg" alt=""></div>
+              <div>
+                <h5>Amir Uddin</h5>
+                <p>UX Designer </p>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-2/5 w-full mt-12 ">
+            <img src="img/rattings.svg" alt="">
+            <p class="py-5">We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company</p>
+            <div class="flex gap-2 space-x-2 items-center">
+              <div><img src="img/reviewer1.svg" alt=""></div>
+              <div>
+                <h5>Amir Uddin</h5>
+                <p>UX Designer </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-2/5 mt-12 ">
+            <img src="img/rattings.svg" alt="">
+            <p class="py-5">We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company</p>
+            <div class="flex gap-2 space-x-2 items-center">
+              <div><img src="img/reviewer1.svg" alt=""></div>
+              <div>
+                <h5>Amir Uddin</h5>
+                <p>UX Designer </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="absolute flex justify-between  -top-5 right-5">
+            <a href="#slide2" class=" mr-5"><img src="img/left-arrow.svg" alt=""></a> 
+            <a href="#slide1" class=""><img src="img/right-arrow.svg" alt=""></a>
+          </div>
+        </div> 
+
+      </div>
+    </section>
+
+    <div class="relative">
+      <div class="absolute left-0 top-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="133" viewBox="0 0 44 133" fill="none">
+          <rect x="29.9091" y="62.5454" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9091 62.5454)" fill="#FF0000"/>
+          <rect x="29.9092" y="34.3636" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 34.3636)" fill="#FF0000"/>
+          <rect x="29.9092" y="48.4545" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 48.4545)" fill="#FF0000"/>
+          <rect x="29.9092" y="20.2727" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 20.2727)" fill="#FF0000"/>
+          <rect x="29.9092" y="6.18182" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 6.18182)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 71)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 99.1818)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 85.0909)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 113.273)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 127.364)" fill="#FF0000"/>
+          <rect x="44" y="62.5454" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 62.5454)" fill="#FF0000"/>
+          <rect x="44" y="34.3636" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 34.3636)" fill="#FF0000"/>
+          <rect x="44" y="48.4545" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 48.4545)" fill="#FF0000"/>
+          <rect x="44" y="20.2727" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 20.2727)" fill="#FF0000"/>
+          <rect x="44" y="6.18182" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 6.18182)" fill="#FF0000"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8182 0.54541)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 28.7273)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 14.6364)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 42.8182)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 56.9091)" fill="#0DB760"/>
+          <rect x="29.9091" y="133" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9091 133)" fill="#0DB760"/>
+          <rect x="29.9092" y="104.818" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 104.818)" fill="#0DB760"/>
+          <rect x="29.9092" y="118.909" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 118.909)" fill="#0DB760"/>
+          <rect x="29.9092" y="90.7272" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 90.7272)" fill="#0DB760"/>
+          <rect x="29.9092" y="76.6363" width="5.63636" height="5.63636" rx="2" transform="rotate(180 29.9092 76.6363)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 0.54541)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 28.7273)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 14.6364)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 42.8182)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 1.72729 56.9091)" fill="#0DB760"/>
+          <rect x="44" y="133" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 133)" fill="#0DB760"/>
+          <rect x="44" y="104.818" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 104.818)" fill="#0DB760"/>
+          <rect x="44" y="118.909" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 118.909)" fill="#0DB760"/>
+          <rect x="44" y="90.7272" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 90.7272)" fill="#0DB760"/>
+          <rect x="44" y="76.6363" width="5.63636" height="5.63636" rx="2" transform="rotate(180 44 76.6363)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8182 71)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 99.1818)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 85.0909)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 113.273)" fill="#0DB760"/>
+          <rect width="5.63636" height="5.63636" rx="2" transform="matrix(-1 0 0 1 15.8181 127.364)" fill="#0DB760"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- contact me section -->
+    <section class="max-w-7xl mx-auto px-5">
+      <div class="text-center space-y-3 mb-5">
+        <div class="relative">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="99"
+            height="42"
+            viewBox="0 0 99 42"
+            fill="none"
+            class="w-full mx-auto ml-7"
+          >
+            <path
+              d="M98.75 21C98.75 23.814 97.4068 26.5164 94.933 28.9976C92.4582 31.4799 88.8647 33.7268 84.4042 35.6191C75.4841 39.4034 63.1438 41.75 49.5 41.75C35.8562 41.75 23.5159 39.4034 14.5959 35.6191C10.1354 33.7268 6.54176 31.4799 4.067 28.9976C1.59324 26.5164 0.25 23.814 0.25 21C0.25 18.186 1.59324 15.4836 4.067 13.0024C6.54176 10.5201 10.1354 8.27324 14.5959 6.3809C23.5159 2.59664 35.8562 0.25 49.5 0.25C63.1438 0.25 75.4841 2.59664 84.4042 6.3809C88.8647 8.27324 92.4582 10.5201 94.933 13.0024C97.4068 15.4836 98.75 18.186 98.75 21Z"
+              stroke="#0DB760"
+              stroke-width="0.5"
+            />
+          </svg>
+          <h5 class="absolute top-2 left-1/2 right-1/2">Portfolio</h5>
+        </div>
+        <h1 class="text-5xl font-bold leading-[60px] md:pr-5">
+          Let's Discuss Your
+          <span class="text-green">Project</span>
+        </h1>
+        <p class="py-4 md:w-2/5 mx-auto">
+          Let's make something new, different and more meaningful or make thing more visual or conceptual
+        </p>
+        
+      </div>
+
+      <!-- form section -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-5">
+        <div class="md:w-1/3 md:mr-8 space-y-3">
+          <div class="flex gap-4 items-center shadow py-5 mb-5 px-5">
+            <a href="" class=""><img src="img/call-icon.svg" alt="" class="bg-green rounded-2xl  p-3"></a>
+            <div>
+              <p class="text-base text-slate-500">Call me</p>
+              <p>+8801613968687</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-center shadow py-5 mb-5 px-5">
+            <a href="" class="flex-nowrap"><img src="img/email-icon.svg" alt="" class="bg-green rounded-2xl p-3"></a>
+            <div>
+              <p class="text-base text-slate-500">Email me</p>
+              <p>ab@gmail.com</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-center shadow py-5 px-5">
+            <a href="" class=""><img src="img/location.svg" alt="" class="bg-green rounded-2xl  p-3"></a>
+            <div>
+              <p class="text-base text-slate-500">Address</p>
+              <p>Zakigonj, Sylhet, Bangladesh.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- right side -->
+        <div class="md:w-3/4 mx-auto md:ml-20">
+          <form class="py-8 space-y-4">
+            <input type="text" placeholder="Full name" class="input input-bordered px-6 py-4 md:w-2/5 w-full mr-4" />
+            <input type="email" placeholder="Your email" class="input input-bordered px-6 py-4 md:w-2/5 w-full w-full" />
+            <input type="text" placeholder="Phone number" class="input input-bordered px-6 py-4 md:w-2/5 w-full mr-4" />
+            <input type="text" placeholder="Budget" class="input input-bordered px-6 py-4 md:w-2/5 w-full" />
+            <textarea placeholder="Message" class="textarea textarea-bordered textarea-lg md:w-[82%] w-full resize-none"></textarea>
+            <input type="button" value="Submit Message" class="bg-green md:w-[82%] text-white px-8 py-4 rounded cursor-pointer mt-5">
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer px-5 py-5 border-t max-w-7xl mx-auto mt-20 flex flex-col md:flex-row justify-between">
+      <div class="">
+        <p>@ 2023. All Rights Reserved</p>
+      </div> 
+      <div class="items-center">
+        <p>Designed by Tanvir Ahmed</p>
+      </div>
+      <div class="">
+        <div class="grid grid-flow-col gap-4">
+          <a><img src="img/facebook.svg" alt=""></a> 
+          <a><img src="img/twitter.svg" alt=""></a>
+          <a><img src="img/linkedin.svg" alt=""></a>
+          <a><img src="img/instagram.svg" alt=""></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- script -->
+    <script>
+      const header = document.querySelector("header");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 0) {
+          header.classList.add("bg-base-100");
+          header.classList.add("shadow");
+        } 
+        else {
+          header.classList.remove("bg-transparent");
+        }
+      });
+    </script>
+    <!-- scroll effect -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll("ul li a");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", e => {
+            e.preventDefault();
+
+            const targetId = link.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                // Calculate the position of the target section with an offset
+                const offset = 100; // Adjust this value to your desired offset
+                const targetOffset = targetSection.offsetTop - offset;
+
+                // Smoothly scroll to the target section with offset
+                window.scrollTo({
+                    top: targetOffset,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
+
+    </script>
+  </body>
+</html>
